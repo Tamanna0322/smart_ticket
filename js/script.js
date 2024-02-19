@@ -29,6 +29,19 @@ for (const btn of button) {
       const remainSeat = parseInt(remain);
       remainSeatId.innerText = remainSeat - 1;
 
+ 
+      const nextBtn = document.getElementById('next-btn');
+      const phoneNum = document.getElementById('phone-num');
+      phoneNum.addEventListener('input', function(){
+         if(phoneNum.value.length === 11){
+            nextBtn.disabled = false;
+         }
+         else{
+            nextBtn.disabled = true;
+         }
+      })
+
+
       const ecoClass = document.getElementById('eco-class');
       const li = document.createElement('li');
       const p1 = document.createElement('p');
@@ -81,13 +94,6 @@ for (const btn of button) {
             alert('You cant select more than 4 seats');
          }
       }
-
-
-
-
-      const nextBtn = document.getElementById('next-btn');
-
-
    })
 
 }
@@ -115,6 +121,20 @@ function apply(coupon, value) {
 
 
 }
+
+const nextBtn = document.getElementById('next-btn');
+nextBtn.addEventListener('click', function(){
+   
+   const modalBox = document.getElementById('my_modal_7');
+   modalBox.checked = true;
+})
+
+function next(){
+   const modalBox = document.getElementById('my_modal_7');
+   modalBox.checked = false;
+}
+
+
 
 
 
